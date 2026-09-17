@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nora Voss — Web Developer</title>
+
+<!-- Bootstrap 5.3 & Style.css -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+<!-- ============ Mobile top bar ============ -->
+<div class="mobile-bar">
+  <div style="display: flex; flex-direction: row;">
+    <img src="images/logo-mobile-light.png" class="lightest" alt="Logo">
+    <img src="images/logo-mobile-dark.png" class="darkest" alt="Logo">
+
+    <span class="panel-title">Nora Voss</span>
+  </div>
+  
+  <div class="d-flex align-items-center gap-3">
+    <button class="toggle-switch" id="modeToggleMobile" aria-label="Toggle dark canvas"><span class="dot"></span></button>
+    <button class="burger" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-label="Open menu"><i class="fa-solid fa-bars"></i>Menu</button>
+  </div>
+</div>
+
+<!-- ============ Offcanvas (mobile nav) ============ -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNav" style="background:var(--paper); width:260px;">
+  <div class="offcanvas-header">
+    <span class="panel-title">Layers</span>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <ul class="layer-list">
+      <li><a class="layer-link" href="#hero" data-bs-dismiss="offcanvas"><span class="idx">01</span> Hero</a></li>
+      <li><a class="layer-link" href="#about" data-bs-dismiss="offcanvas"><span class="idx">02</span> About</a></li>
+      <li><a class="layer-link" href="#experience" data-bs-dismiss="offcanvas"><span class="idx">03</span> Experience</a></li>
+      <li><a class="layer-link" href="#work" data-bs-dismiss="offcanvas"><span class="idx">04</span> Work</a></li>
+      <li><a class="layer-link" href="#process" data-bs-dismiss="offcanvas"><span class="idx">05</span> Process</a></li>
+      <li><a class="layer-link" href="#FeedBack" data-bs-dismiss="offcanvas"><span class="idx">06</span> FeedBack</a></li>
+      <li><a class="layer-link" href="#contact" data-bs-dismiss="offcanvas"><span class="idx">07</span> Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ Desktop layers panel ============ -->
+<nav class="layers-panel" aria-label="Section navigation">
+
+  <!-- ============ Desktop logo ============ -->
+  <div  style="display: grid; grid-template-columns:auto; justify-content: center; margin-bottom: 28px;">
+    <div style="justify-content: center;">
+    <img src="images/Logo-desktop-light.png" class="lightest" alt="Logo">
+    <img src="images/logo-desktop-dark.png" class="darkest" alt="Logo">
+    </div>
+   
+    <div class="panel-title">Nora Voss</div>
+    <div class="panel-sub">file / portfolio.</div>
+   
+    
+  </div>
+  <ul class="layer-list" id="layerList">
+    <li><a class="layer-link" href="#hero" data-target="hero"><span class="idx">01</span> Hero</a></li>
+    <li><a class="layer-link" href="#about" data-target="about"><span class="idx">02</span> About</a></li>
+    <li><a class="layer-link" href="#experience" data-target="experience"><span class="idx">03</span> Experience</a></li>
+    <li><a class="layer-link" href="#work" data-target="work"><span class="idx">04</span> Work</a></li>
+    <li><a class="layer-link" href="#process" data-target="process"><span class="idx">05</span> Process</a></li>
+    <li><a class="layer-link" href="#FeedBack" data-target="FeedBack"><span class="idx">06</span> Feed Back</a></li>
+    <li><a class="layer-link" href="#contact" data-target="contact"><span class="idx">07</span> Contact</a></li>
+  </ul>
+  <div class="canvas-toggle">
+    <span class="mono">Canvas: <span id="modeLabel">Light</span></span>
+    <button class="toggle-switch" id="modeToggle" aria-label="Toggle dark canvas"><span class="dot"></span></button>
+  </div>
+</nav>
+
+<!-- ============ Main canvas ============ -->
+<main class="canvas">
+
+  <!-- HERO -->
+  <section id="hero" class="frame hero-frame" style="margin-top:0;">
+    <span class="frame-tag">Hero</span>
+    <span class="frame-dim">1440 × 900</span>
+    <span class="coord-readout" id="coordReadout">x: 0, y: 0</span>
+
+    <h1 class="hero-headline">
+      I build <span class="cycle-word" id="cycleWord">websites</span><br>
+      that feel obvious in hindsight.
+    </h1>
+    <p class="hero-lede">
+      Web developer building fast, responsive sites with HTML, CSS, JavaScript, and Bootstrap —
+      from first wireframe to a site that's live, tested, and easy to maintain.
+    </p>
+    <div class="d-flex gap-3 flex-wrap">
+      <a href="#work" class="btn-ink">View Projects</a>
+      <a href="#contact" class="btn-outline-ink">Let's Connect<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="frame">
+    <span class="frame-tag">About</span>
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <h2 class="mb-3" style="font-size:1.7rem;">A short version of me</h2>
+        <p style="color:var(--ink-soft);">
+          I'm a web developer who builds sites for small studios, tutors, and startups —
+          from the first line of HTML to a site that's live, responsive, and easy for
+          someone else to maintain. I work close to the code: no page builders, no bloated
+          frameworks beyond what a project actually needs.
+        </p>
+        <p style="color:var(--ink-soft);">
+          Outside client work, I write about front-end patterns and keep a running archive
+          of layout and interaction details worth reusing.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <div class="skill-row">
+         
+          </span>
+          <span class="skill-name"><i class="fa-brands fa-html5"></i>HTML &amp; CSS</span>
+          <span class="skill-track"><span class="skill-fill" style="width:96%;  background:linear-gradient(to left, var(--blue),var(--widc))"></span></span>
+          <span class="skill-pct">96%</span>
+        </div>
+        <div class="skill-row">
+          
+          </span>
+          <span class="skill-name"><i class="fa-brands fa-bootstrap"></i>Bootstrap</span>
+          <span class="skill-track"><span class="skill-fill" style="width:92%; background:linear-gradient(to left, var(--blue),var(--widc))"></span></span>
+          <span class="skill-pct">92%</span>
+        </div>
+        <div class="skill-row">
+        
+          </span>
+          <span class="skill-name"><i class="fa-brands fa-js"></i>JavaScript</span>
+          <span class="skill-track"><span class="skill-fill" style="width:78%;  background:linear-gradient(to left, var(--blue),var(--widc))"></span></span>
+          <span class="skill-pct">78%</span>
+        </div>
+        <div class="skill-row">
+          
+          </span>
+          <span class="skill-name"><i class="fa-brands fa-git-alt"></i>Git &amp; GitHub</span>
+          <span class="skill-track"><span class="skill-fill" style="width:85%; background:linear-gradient(to left, var(--blue),var(--widc))"></span></span>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="skill-row">
+         
+          </span>
+          <span class="skill-name"><i class="fa-solid fa-laptop-code"></i>Responsive layout</span>
+          <span class="skill-track"><span class="skill-fill" style="width:95%; background:linear-gradient(to left , var(--blue),var(--widc))"></span></span>
+          <span class="skill-pct">95%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE / EDUCATION -->
+  <section id="experience" class="frame">
+    <span class="frame-tag">Experience</span>
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <h2 class="mb-4" style="font-size:1.7rem;">Where I've worked</h2>
+
+        <div class="exp-item">
+          <div class="exp-role">Front-End Developer</div>
+          <span class="exp-meta">Studio Nine — 2025–Present</span>
+          <p class="exp-desc">Build and maintain client sites end to end, from wireframe to deployed build. Own the front-end for four active client accounts.</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-role">Junior Web Developer</div>
+          <span class="exp-meta">Harrow Digital — 2023–2025</span>
+          <p class="exp-desc">Built landing pages and internal tools with HTML, CSS, and Bootstrap. Worked directly with designers to turn Figma files into responsive, working sites.</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-role">Freelance Web Developer</div>
+          <span class="exp-meta">Self-employed — 2022–2023</span>
+          <p class="exp-desc">Delivered small business websites end to end — scoping, building, and handing off sites clients could update themselves.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <h2 class="mb-4" style="font-size:1.7rem;">Education</h2>
+        <div class="edu-row">
+          <div>
+            <div class="edu-name">Bachelor of Information Technology</div>
+            <div class="edu-org">University of Moratuwa</div>
+          </div>
+          <span class="edu-year">2020–2023</span>
+        </div>
+        <div class="edu-row">
+          <div>
+            <div class="edu-name">Full-Stack Web Development Certificate</div>
+            <div class="edu-org">UOM CODL</div>
+          </div>
+          <span class="edu-year">2021</span>
+        </div>
+        <div class="edu-row">
+          <div>
+            <div class="edu-name">Responsive Web Design Certification</div>
+            <div class="edu-org">W3school</div>
+          </div>
+          <span class="edu-year">2020</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" class="frame">
+    <span class="frame-tag">Work</span>
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-0">
+      <h2 style="font-size:1.7rem;">Selected projects</h2>
+    </div>
+    <div class="tab-row mb-4 mt-3">
+      <button class="tab-btn active" data-filter="all">All</button>
+      <button class="tab-btn" data-filter="landing">Visuals</button>
+      <button class="tab-btn" data-filter="brand">Brands</button>
+      <button class="tab-btn" data-filter="builds">Experiments</button>
+     
+    </div>
+
+    <div class="row g-3" id="projectGrid">
+      <div class="col-md-6 proj-item" data-cat="brand">
+        <div class="proj-card">
+          <img class="proj-thumb-img" src="images/Product launch site.png" alt="WRK-Timepiece">
+          
+          <a class="proj-live" href="https://www.wrk-timepieces.com/products/acf-01" target="_blank" rel="noopener" aria-label="View live site" title="View live site">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+          
+          <div class="proj-overlay"><button type="button" data-bs-toggle="modal" data-bs-target="#cs-wrk">Open case study</button></div>
+          <div class="proj-meta"><span class="name">Wrk_Timepiece - Product launch</span><span class="dim">1440×2200</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 proj-item" data-cat="brand">
+        <div class="proj-card">
+          <img class="proj-thumb-img" src="images/Audiobrand site.png" alt="BestAudioBrands">
+          <a class="proj-live" href="https://www.bestaudiobrands.com/" target="_blank" rel="noopener" aria-label="View live site" title="View live site">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+          
+          <div class="proj-overlay"><button type="button" data-bs-toggle="modal" data-bs-target="#cs-brands">Open case study</button></div>
+          <div class="proj-meta"><span class="name">BestAudioBrands - Brand site</span><span class="dim">1440×1024</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 proj-item" data-cat="builds">
+        <div class="proj-card">
+          <img class="proj-thumb-img" src="images/Portfolio site.png" alt="Portfolio">
+          <a class="proj-live" href="https://nashath77.github.io/My-portfolio/#" target="_blank" rel="noopener" aria-label="View live site" title="View live site">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+          
+          <div class="proj-overlay"><button type="button" data-bs-toggle="modal" data-bs-target="#cs-portf">Open case study</button></div>
+          <div class="proj-meta"><span class="name">Developer Portfolio — Personal site</span><span class="dim">1440×1980</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 proj-item" data-cat="builds">
+        <div class="proj-card">
+          <img class="proj-thumb-img" src="images/Tutor site.png" alt="Tutor Academy">
+          <a class="proj-live" href="https://nashath53.github.io/Tutor-Management-system/index.html" target="_blank" rel="noopener" aria-label="View live site" title="View live site">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+          
+          <div class="proj-overlay"><button type="button" data-bs-toggle="modal" data-bs-target="#cs-Tutor">Open case study</button></div>
+          <div class="proj-meta"><span class="name">Tutor Academy - Tracking site</span><span class="dim">1440×2400</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 proj-item" data-cat="landing">
+        <div class="proj-card">
+          <img class="proj-thumb-img" src="images/Agency site.png" alt="Web Agency">
+          <a class="proj-live" href="https://webtactics.org/" target="_blank" rel="noopener" aria-label="View live site" title="View live site">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+          
+          <div class="proj-overlay"><button type="button" data-bs-toggle="modal" data-bs-target="#cs-Agency">Open case study</button></div>
+          <div class="proj-meta"><span class="name">Web Agency — Landing Page</span><span class="dim">1440×2400</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 proj-item" data-cat="builds">
+        <div class="proj-card">
+          <img class="proj-thumb-img" src="images/Commando strike cover.png" alt="Game">
+          <a class="proj-live" href="https://nashath53.github.io/2D-mini-Game/" target="_blank" rel="noopener" aria-label="View live site" title="View live site">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+          
+          <div class="proj-overlay"><button type="button" data-bs-toggle="modal" data-bs-target="#cs-game">Open case study</button></div>
+          <div class="proj-meta"><span class="name">Commando Strike - 2D Gaming site</span><span class="dim">1440×2400</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="frame">
+    <span class="frame-tag">Process</span>
+    <h2 class="mb-4" style="font-size:1.7rem;">How a project runs</h2>
+    <div class="row g-4">
+      <div class="col-md-3 step-col">
+        <span class="step-num">01</span>
+        <h3 style="font-size:1.05rem;">Discover</h3>
+        <p style="color:var(--ink-soft); font-size:0.92rem;">A short call to get the goal, the audience, and what's already been tried.</p>
+      </div>
+      <div class="col-md-3 step-col">
+        <span class="step-num">02</span>
+        <h3 style="font-size:1.05rem;">Design</h3>
+        <p style="color:var(--ink-soft); font-size:0.92rem;">Wireframes first, then a full visual pass with real content — not lorem ipsum.</p>
+      </div>
+      <div class="col-md-3 step-col">
+        <span class="step-num">03</span>
+        <h3 style="font-size:1.05rem;">Build</h3>
+        <p style="color:var(--ink-soft); font-size:0.92rem;">Hand-coded HTML, CSS, and Bootstrap, tested from mobile up to a wide desktop.</p>
+      </div>
+      <div class="col-md-3 step-col">
+        <span class="step-num">04</span>
+        <h3 style="font-size:1.05rem;">Deliver</h3>
+        <p style="color:var(--ink-soft); font-size:0.92rem;">Handoff with clean source files and two weeks of support after launch.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FeedBack (testimonials) -->
+  <section id="FeedBack" class="frame">
+    <span class="frame-tag">FeedBack</span>
+    <h2 class="mb-4" style="font-size:1.7rem;">What clients FeedBack</h2>
+
+    <div id="FeedBackCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="FeedBack-body d-flex gap-3">
+            <div class="pin" style="background:#3355FF;"><span>CD</span></div>
+            <div>
+              <p class="FeedBack-quote">"Nora turned a vague idea into a site that actually matched how we talk to customers. The build was clean and fast to load, too."</p>
+              <div class="FeedBack-name">Clare Dunmore</div>
+              <div class="FeedBack-role">Founder, Cedar &amp; Co.</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="FeedBack-body d-flex gap-3">
+            <div class="pin" style="background:#FF6B4A;"><span>JM</span></div>
+            <div>
+              <p class="FeedBack-quote">"Every screen felt considered. She pushed back on a few of our ideas and was right both times."</p>
+              <div class="FeedBack-name">Jonah Marsh</div>
+              <div class="FeedBack-role">Product lead, Fieldwork</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="FeedBack-body d-flex gap-3">
+            <div class="pin" style="background:#2FBF71;"><span>RT</span></div>
+            <div>
+              <p class="FeedBack-quote">"Delivered ahead of schedule with documentation good enough that our own team could maintain it."</p>
+              <div class="FeedBack-name">Rhea Talbot</div>
+              <div class="FeedBack-role">Marketing, Northbound</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex gap-2 mt-4">
+        <button class="FeedBack-ctrl" type="button" data-bs-target="#FeedBackCarousel" data-bs-slide="prev" aria-label="Previous">←</button>
+        <button class="FeedBack-ctrl" type="button" data-bs-target="#FeedBackCarousel" data-bs-slide="next" aria-label="Next">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="frame">
+    <span class="frame-tag">Contact</span>
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <h2 class="mb-3" style="font-size:1.7rem;">Start a project</h2>
+        <p style="color:var(--ink-soft);"><span class="status-dot"></span>Available for new projects — next opening in two weeks.</p>
+        <p style="color:var(--ink-soft); font-size:0.92rem;">Prefer email? Write to <a href="mailto:mhdnashath53@gmail.com">hello@noravoss.design</a>.</p>
+      </div>
+      <div class="col-lg-7">
+        
+        <form action="https://formspree.io/f/xgaegdoy" method="POST" id="contactForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="fName" name="name" placeholder="Name" required>
+                <label for="fName">Name</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="fEmail" name="email" placeholder="Email" required>
+                <label for="fEmail">Email</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <textarea class="form-control" id="fMsg" name="message" placeholder="Message" style="height:120px;" required></textarea>
+                <label for="fMsg">What are you building?</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn-ink">Send message</button>
+              <span id="formStatus" class="mono ms-3"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Nora Voss</p>
+  <p>
+    <a href="mhdnashath53@gmail.com"></a> 
+    <a href="https://github.com/Nashath53"><i class="fa-brands fa-github"></i></a> 
+    <a href="#"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+  </p>
+</footer>
+
+<!-- ============ Case study modals ============ -->
+<div class="modal fade" id="cs-wrk" tabindex="-1" aria-labelledby="cs-wrk-label" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="cs-wrk-label" style="font-size:1.3rem;">Wrk— product launch</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img class="cs-cover" src="images/Product launch site.png" alt="WRK Timepieces">
+        <div class="cs-cover d-flex align-items-center justify-content-center">
+        </div>
+        <span class="cs-label">Overview</span>
+        <p style="color:var(--ink-soft);">A premium product-launching website concept designed to showcase a luxury timepiece through strong visuals, product storytelling, and a refined user experience.</p>
+        <span class="cs-label">My role</span>
+        <p style="color:var(--ink-soft);">Designed and developed the responsive front-end, focusing on visual hierarchy, product presentation, navigation, and responsive layouts.</p>
+        <span class="cs-label">Tools</span>
+        <p style="color:var(--ink-soft);">Figma, HTML, CSS, Bootstrap.</p>
+        <span class="cs-label">Outcome</span>
+        <p style="color:var(--ink-soft); margin-bottom:0;">Created a modern product-focused experience that highlights the timepiece, communicates its premium identity, and guides visitors through the product story.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cs-brands" tabindex="-1" aria-labelledby="cs-brands-label" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="cs-brands-label" style="font-size:1.3rem;">Best-AudioBrands</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img class="cs-cover" src="images/Audiobrand site.png" alt="Best Audio Brand"> 
+        <div class="cs-cover d-flex align-items-center justify-content-center">
+        </div>
+        <span class="cs-label">Overview</span>
+        <p style="color:var(--ink-soft);">A branding-focused website concept created to present audio brands, their identity, products, and key information through a clean and structured interface.</p>
+        <span class="cs-label">My role</span>
+        <p style="color:var(--ink-soft);">Developed the responsive website structure and implemented the visual design, navigation, brand sections, and interactive elements.</p>
+        <span class="cs-label">Tools</span>
+        <p style="color:var(--ink-soft);">Figma, HTML, CSS, Bootstrap.</p>
+        <span class="cs-label">Outcome</span>
+        <p style="color:var(--ink-soft); margin-bottom:0;">Built a professional brand-oriented website that organizes information clearly while maintaining a consistent and engaging visual identity.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cs-portf" tabindex="-1" aria-labelledby="cs-portf-label" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="cs-portf-label" style="font-size:1.3rem;">Web Developer Portfolio</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img class="cs-cover" src="images/Portfolio site.png" alt="Portfolio">
+        <div class="cs-cover d-flex align-items-center justify-content-center" >
+        </div>
+        <span class="cs-label">Overview</span>
+        <p style="color:var(--ink-soft);">A modern portfolio website designed to showcase a web developer's skills, projects, experience, and professional profile.</p>
+        <span class="cs-label">My role</span>
+        <p style="color:var(--ink-soft);">Designed and developed the complete front-end, including the hero section, project showcase, skills, about section, and contact interface.</p>
+        <span class="cs-label">Tools</span>
+        <p style="color:var(--ink-soft);">Figma, HTML, CSS, Bootstrap.</p>
+        <span class="cs-label">Outcome</span>
+        <p style="color:var(--ink-soft); margin-bottom:0;">Created a responsive portfolio that presents technical skills and projects in a clear, professional, and easy-to-navigate format.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cs-Tutor" tabindex="-1" aria-labelledby="cs-Tutor-label" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="cs-Tutor-label" style="font-size:1.3rem;">Tutor Academy-Tracking System</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img class="cs-cover" src="images/Tutor site.png" alt="Tutor Academy">
+        <div class="cs-cover d-flex align-items-center justify-content-center">
+        </div>
+        <span class="cs-label">Overview</span>
+        <p style="color:var(--ink-soft);">A web-based tracking system concept for a tutoring academy to organize student information, attendance, class records, fees, and academic progress.</p>
+        <span class="cs-label">My role</span>
+        <p style="color:var(--ink-soft);">Designed and developed the front-end interface for dashboards, student records, attendance tracking, fee information, and academic monitoring.</p>
+        <span class="cs-label">Tools</span>
+        <p style="color:var(--ink-soft);">Figma, HTML, CSS, Bootstrap.</p>
+        <span class="cs-label">Outcome</span>
+        <p style="color:var(--ink-soft); margin-bottom:0;">Created a structured dashboard-style interface that makes routine academy management information easier to view, organize, and track.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cs-Agency" tabindex="-1" aria-labelledby="cs-Agency-label" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="cs-Agency-label" style="font-size:1.3rem;">Web Agency - Landing page</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img class="cs-cover" src="images/Agency site.png" alt="Web Agency">
+        <div class="cs-cover d-flex align-items-center justify-content-center">
+        </div>
+        <span class="cs-label">Overview</span>
+        <p style="color:var(--ink-soft);">A modern landing-page concept for a web development agency, designed to introduce its services, highlight capabilities, showcase selected projects, and generate client inquiries.</p>
+        <span class="cs-label">My role</span>
+        <p style="color:var(--ink-soft);">Designed and developed the responsive landing page with a strong hero section, services, portfolio showcase, process, and call-to-action sections.</p>
+        <span class="cs-label">Tools</span>
+        <p style="color:var(--ink-soft);">Figma, HTML, CSS, Bootstrap.</p>
+        <span class="cs-label">Outcome</span>
+        <p style="color:var(--ink-soft); margin-bottom:0;">Designed and developed the responsive landing page with a strong hero section, services, portfolio showcase, process, and call-to-action sections.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cs-game" tabindex="-1" aria-labelledby="cs-game-label" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="cs-game-label" style="font-size:1.3rem;">Commando Strike</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img class="cs-cover" src="images/Commando strike cover.png" alt="2D Game">
+        <div class="cs-cover d-flex align-items-center justify-content-center">
+        </div>
+        <span class="cs-label">Overview</span>
+        <p style="color:var(--ink-soft);">A fun and interactive 2D browser game designed to demonstrate game logic, player interaction, animations, scoring, and responsive web design.</p>
+        <span class="cs-label">My role</span>
+        <p style="color:var(--ink-soft);">Designed and developed the game interface, implemented player controls, game mechanics, scoring system, animations, and interactive elements.</p>
+        <span class="cs-label">Tools</span>
+        <p style="color:var(--ink-soft);">HTML, CSS, Bootstrap.</p>
+        <span class="cs-label">Outcome</span>
+        <p style="color:var(--ink-soft); margin-bottom:0;">Created an engaging browser-based game that combines interactive gameplay with a responsive and visually appealing interface.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://kit.fontawesome.com/fa50070266.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
