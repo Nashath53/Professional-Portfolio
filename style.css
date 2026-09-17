@@ -764,6 +764,9 @@ footer a:hover {
   margin-bottom: 4px;
   letter-spacing: 0.5px;
 }
+.fa-brand {
+  margin : 0 4px;
+}
 
 /* ============ Responsive ============ */
 
